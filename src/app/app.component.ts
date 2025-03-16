@@ -1,28 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProductService } from './services/product.service';
 import { CommonModule } from '@angular/common';
+import { CategoryComponent } from './category/category.component';
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,CategoryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  products: any[] = [];
-
-  constructor(private productService: ProductService) {}
-
-  ngOnInit() {
-    this.productService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data;  // Store API response in `products`
-        console.log('Products:', this.products);
-      },
-      error: (err) => {
-        console.error('Error fetching products:', err);
-      }
-    });
+export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
   }
 }
+  
