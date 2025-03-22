@@ -1,0 +1,72 @@
+$primary-color: #ff6f61;
+$secondary-color: #ffffff;
+$bg-color: #f8f9fa;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px $shadow-color;
+  border-radius: 10px;
+}
+
+.logo h1 {
+  color: $secondary-color;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+input {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  width: 30rem;
+  box-shadow: 0 2px 4px $shadow-color;
+}
+
+.button {
+  background: $secondary-color;
+  color: $primary-color;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: darken($secondary-color, 10%);
+  }
+}
+
+#profile {
+  display: inline-block;
+  margin-left: 15px;
+  color: $secondary-color;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  input {
+    width: 100%;
+  }
+}
